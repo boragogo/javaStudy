@@ -11,6 +11,8 @@ public class Study01 {
 		
 		Scanner scan = new Scanner(System.in);		// Scanner 객체 생성
 		
+		// case 1
+		
 		int aniSum = 0;				// 닭 + 개 총 마리 수 
 		
 		while(!checkCondition1(aniSum)) {			
@@ -19,20 +21,46 @@ public class Study01 {
 			aniSum = scan.nextInt();		
 		}
 		
-		System.out.println("개와 닭의 총 다리수를 입력하세요.");
-		System.out.print(">> ");
-		
 		int legSum = 0;				// 닭 + 개 총 다리 수
 		
-		do {
-			legSum = scan.nextInt();
-			
-			if(legSum < 0 || legSum % 2 != 0) {
-				System.out.println("0 이상의 짝수를 입력하세요 ");
-				System.out.print(">> ");			
-			}
-		} while (legSum < 0 || legSum % 2 != 0);		
-				
+		while(!checkCondition1(legSum)) {			
+			System.out.println("개와 닭의 총 다리수를 입력하세요. (1 이상의 값)");
+			System.out.print(">> ");
+			legSum = scan.nextInt();		
+		}
+		
+
+		// case 2
+		
+//		int aniSum = 0;				// 닭 + 개 총 마리 수 
+//		
+//		System.out.println("개와 닭의 총 마리수를 입력하세요.");
+//		System.out.print(">> ");
+//		
+//		do {
+//			aniSum = scan.nextInt();
+//			
+//			if(aniSum < 0) {
+//				System.out.println("0 이상의 숫자를 입력하세요 ");
+//				System.out.print(">> ");			
+//			}
+//		} while (aniSum < 0);		
+//		
+//		int legSum = 0;				// 닭 + 개 총 다리 수
+//	
+//		System.out.println("개와 닭의 총 다리수를 입력하세요.");
+//		System.out.print(">> ");
+//		
+//		do {
+//			legSum = scan.nextInt();
+//			
+//			if(legSum < 0 || legSum % 2 != 0) {
+//				System.out.println("0 이상의 짝수를 입력하세요 ");
+//				System.out.print(">> ");			
+//			}
+//		} while (legSum < 0 || legSum % 2 != 0);	
+		
+		
 		int x = 0;					// 개 마리 수
 		int y = 0;					// 닭 마리 수
 		int dogLeg = 4;				// 개 다리 수
