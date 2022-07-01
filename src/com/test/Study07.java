@@ -7,14 +7,16 @@ public class Study07 {
 
 	public static void main(String[] args) {
 		
-		// 화씨 온도를 입력 받아 섭씨로 변경하기
+		// 화씨 -> 섭씨 온도로 변경하기
 		
 		Scanner sc = new Scanner(System.in);	// scanner 객체 생성
 		
 		System.out.println("화씨 온도를 입력");
 		
-		float fah = sc.nextFloat();				// 화씨 온도	
-		float cel = (fah - 32) * 10 / 18;		// 섭씨 온도
+		float fah = sc.nextFloat();				// 화씨 온도			
+		float cel;								// 섭씨 온도
+		cel = (float)((fah-32)*0.56);
+		// float cel = (fah - 32) * 10 / 18;
 		
 		// 소수점 1자리로 출력
 		DecimalFormat frmt = new DecimalFormat();	// decimalFormat 객체 생성
@@ -22,5 +24,4 @@ public class Study07 {
 		
 		System.out.println("섭씨 온도 : " + frmt.format(cel));
 	}
-
 }
