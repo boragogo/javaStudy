@@ -8,6 +8,8 @@ public class Study02 {
 		int sum2 = 0;	// 5의 배수의 합
 		int sum3 = 0;	// 2 또는 5의 배수의 합
 		
+		// 1 ~ 100까지의 숫자중에서 sum1, sum2, sum3 각각 구하기
+		
 		for (int i = 1; i <= 100; i++) {
 			if (i % 2 == 0) {
 				sum1 += i;
