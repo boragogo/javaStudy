@@ -45,5 +45,4 @@ public class Study12 {
 		System.out.println("평균 : " + avg);
 		System.out.println("성적등급 : " + grade);
 	}
-
 }
