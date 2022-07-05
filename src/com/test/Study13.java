@@ -8,48 +8,56 @@ public class Study13 {
 		
 		// 영문 이름 입력받아 각 문자에 부여된 숫자들의 합계 구한 후, 그 합계가 소수인지 확인하기
 		
-		Scanner sc = new Scanner(System.in);	// scanner 객체 생성
+		// scanner 객체 생성
+		@SuppressWarnings("resource")
+		Scanner sc = new Scanner(System.in);	
 		
-		System.out.println("이름(영문)을 입력하세요");
+		System.out.println("영문 이름을 입력하세요");
 				
-		// 영문 이름 
-		// 대문자 변환 & 문자열 공백 제거
-		String str = sc.nextLine().toUpperCase().replace(" ", "");	
+		// 문자열을 키보드로부터 입력받음
+		String str = sc.nextLine();	
 		
-		// System.out.println(str);
+		// 소수 여부 확인
+		if(isPrimeString(str)) {
+			System.out.println("소수입니다.");
+		} else {
+			System.out.println("소수가 아닙니다.");
+		}
+	}
+	
+	private static int getSumOfAlphaNumeric(String str) {
+		str = str.toUpperCase();
 		
-		int sum = 0;		// 총 합계
+		// 문자열 해당숫자 총 합계
+		int sum = 0;
 		
-		// 문자별 숫자와 총 합계 구하기
 		for(int i = 0; i < str.length(); i++) {
-		
-			int num = str.charAt(i) - 64;		// A = 1, ... 
-		
+			int num = str.charAt(i) - 64;
+			
 			System.out.print(num + " ");
 			
-			if (num > 0 && num < 27) {
+			if(num > 0 && num < 27) {
 				sum += num;
-			}			
+			}
 		}
+		System.out.println("합계: " + sum);
+		return sum;
+	}
+	
+	private static boolean isPrimeNumber(int num) {
 		
-		System.out.println("\n합계 : " + sum);
-				
 		// 제곱근 구하기
-		int sumSqrt = (int)Math.sqrt(sum);
+		int sqrt = (int)Math.sqrt(num);
 		
-		// 소수 판별 논리형 변수
-		boolean isPrime = false;
-		
-		for(int j = 2; j <= sumSqrt; j++) {
-			if(sum % j == 0) {
-				isPrime = true;
-			} 
+		for(int j = 2; j <= sqrt; j++) {
+			if(num % j == 0) {
+				return false;
+			}
 		}
-		
-		if(isPrime) {
-			System.out.println("소수가 아닙니다.");
-		} else {
-			System.out.println("소수입니다.");
-		}
+		return true;
+	}
+	
+	private static boolean isPrimeString(String str) {
+		return isPrimeNumber(getSumOfAlphaNumeric(str));
 	}
 }
