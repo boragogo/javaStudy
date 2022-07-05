@@ -32,15 +32,24 @@ public class Study13 {
 			}			
 		}
 		
-		System.out.println("\n합계 : " + sum);		
+		System.out.println("\n합계 : " + sum);
 				
-		// 총 합계의 소수 여부 확인
+		// 제곱근 구하기
 		int sumSqrt = (int)Math.sqrt(sum);
 		
+		// 소수 판별 논리형 변수
+		boolean isPrime = false;
+		
 		for(int j = 2; j <= sumSqrt; j++) {
-			
+			if(sum % j == 0) {
+				isPrime = true;
+			} 
+		}
+		
+		if(isPrime) {
+			System.out.println("소수가 아닙니다.");
+		} else {
+			System.out.println("소수입니다.");
 		}
 	}
-	
-
 }
