@@ -25,7 +25,7 @@ public class Study04 {
 		@SuppressWarnings("resource")
 		Scanner sc = new Scanner(System.in);
 		
-		System.out.println("숫자 입력");
+		System.out.println("숫자 입력 :");
 		
 		// 문자열을 키보드로부터 입력받음
 		int num = sc.nextInt();
