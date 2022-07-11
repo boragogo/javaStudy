@@ -9,6 +9,7 @@ public class Study01 {
 		// 닭과 개의 총 다리수, 총 마리 수 입력했을 때
 		// 닭과 개는 각각 몇 마리인지 구하기 
 		
+		@SuppressWarnings("resource")
 		Scanner scan = new Scanner(System.in);		// Scanner 객체 생성
 		
 		// case 1
