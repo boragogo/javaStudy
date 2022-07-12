@@ -15,12 +15,13 @@ public class Study05 {
 			// 1 ~ 100 사이의 자연수에서 10개 난수 생성	
 			arr[i] = (int)((Math.random()) * 100) + 1;
 			
-			// 난수 중복 확인
-			for( int j = 0; j < i; j++) {
-				if(arr[i] == arr[j]) {
-					i--;
-				}
-			}			
+//			난수 중복 확인
+//			for( int j = 0; j < i; j++) {
+//				if(arr[i] == arr[j]) {
+//					i--;
+//				}
+//			}
+			
 			// 정렬 전 배열
 			System.out.print(arr[i] + " ");
 		}					
@@ -38,14 +39,19 @@ public class Study05 {
 	
 	public static int[] bubbleSort(int[] arr) {
 		
+		int comp = arr.length - 1;
+		
 		// 2개의 수 비교
-		for(int i = 0; i < arr.length -1; i++) {
-			for(int j = 0; j < arr.length - i - 1; j++) {
+		for(int i = 0; i < comp; i++) {
+			
+			for(int j = 0; j < comp - i; j++) {
+				
 				if( arr[j] > arr[j+1]) {
+					
 					int temp = arr[j];
 					arr[j] = arr[j+1];
 					arr[j+1] = temp;
-				}				
+				}
 			}
 		}
 		return arr;
