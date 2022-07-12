@@ -4,9 +4,9 @@ import java.util.Scanner;
 
 public class Study04 {
 	
-	//피보나치 수열 1 ~ n번째까지 출력하기
+	// 피보나치 수열 1 ~ n번째까지 출력하기
 	
-	public static int[] pivonacchi(int num) {
+	public static int[] pibonacchi(int num) {
 		int[] arr = new int[num];
 		
 		arr[0] = 1;
@@ -31,7 +31,7 @@ public class Study04 {
 		int num = sc.nextInt();
 		int[] ref;
 		
-		ref = pivonacchi(num);
+		ref = pibonacchi(num);
 		
 		// n번째까지 피보나치 수열 출력
 		for(int i : ref) {
