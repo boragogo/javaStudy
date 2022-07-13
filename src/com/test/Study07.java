@@ -32,7 +32,7 @@ public class Study07 {
 			
 			// numberList에서 선택된 숫자 제거 
 			numberList.remove(num);	
-		}
+		} 
 		
 		// myNumber 배열 오름차순 정렬 (보너스 번호 제외)
 		Arrays.sort(myNumber,0,6);
