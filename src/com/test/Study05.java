@@ -24,7 +24,7 @@ public class Study05 {
 			
 			// 정렬 전 배열
 			System.out.print(arr[i] + " ");
-		}					
+		}
 		
 		// 오름차순 버블 정렬
 		bubbleSort(arr);

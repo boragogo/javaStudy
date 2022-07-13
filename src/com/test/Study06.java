@@ -8,8 +8,6 @@ public class Study06 {
 		
 		// 1 ~ 100 사이 10개의 난수로 버블정렬하기 => ArrayList 활용하기
 		
-		ArrayList<Integer> randomNumber = new ArrayList<>();
-		
 	}
 
 }
