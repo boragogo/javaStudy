@@ -17,10 +17,10 @@ public class Study08 {
 		List<Integer> lottoNumbers = new ArrayList<>();
 		List<Integer> bonusNumbers = new ArrayList<>();
 		
-		// 로또 번호 추출 리스트
+		// 추출한 로또 번호 리스트에 추가
 		lottoNumbers = getLottoBall(COUNT_OF_LOTTO_NUMBERS);
 		
-		// 보너스 번호 추출 리스트
+		// 추출한 보너스 번호 리스트에 추가
 		bonusNumbers = getLottoBall(COUNT_OF_BONUS_NUMBERS);
 		
 		// 로또 번호 오름차순 정렬
@@ -37,15 +37,13 @@ public class Study08 {
 		selectedBall(bonusNumbers);
 	}
 		
-	// 번호 추출 메소드
+	// 번호 추출 메서드
 	public static List<Integer> getLottoBall(int cnt) {
 		
 		// 1 ~ 45까지 수를 numberList에 추가 
 		List<Integer> numberList = new ArrayList<Integer>();
 		
-		for(int i = 1; i <= 45; i++) {
-			numberList.add(i);
-		}
+		addValueList(numberList);
 		
 		// 추출 번호 담을 List 추가
 		List<Integer> ballList = new ArrayList<>();
@@ -63,31 +61,40 @@ public class Study08 {
 		return ballList;
 	}
 	
-	// 번호 출력 메소드
-	public static List<Integer> selectedBall(List<Integer> list) {
+	// 리스트에 새로운 값 추가 메서드
+	public static List<Integer> addValueList(List<Integer> valueList) {
+		
+		for(int i = 1; i <= 45; i++) {
+			valueList.add(i);
+		}
+		return valueList;
+	}	
+	
+	// 번호 출력 메서드
+	public static List<Integer> selectedBall(List<Integer> selectedList) {
 				
-		for(int i = 0; i < list.size(); i++) {
+		for(int i = 0; i < selectedList.size(); i++) {
 			if (i > 0) {
 				System.out.print(", ");
-			} 
-			System.out.print(list.get(i));
+			}
+			System.out.print(selectedList.get(i));
 		}
-		return list;
+		return selectedList;
 	}
 	
-	// 오름차순 정렬 메소드
-	public static List<Integer> bubbleSort(List<Integer> list) {
+	// 오름차순 정렬 메서드
+	public static List<Integer> bubbleSort(List<Integer> ascList) {
 		
-		for(int i = 0; i < list.size(); i++) {
-			for(int j = 0; j < list.size() - 1 - i; j++) {
-				if(list.get(j) > list.get(j+1)) {
-					int temp = list.get(j);
-					list.set( j, list.get(j+1) );
-					list.set( j+1, temp);
+		for(int i = 0; i < ascList.size(); i++) {
+			for(int j = 0; j < ascList.size() - 1 - i; j++) {
+				if(ascList.get(j) > ascList.get(j+1)) {
+					int temp = ascList.get(j);
+					ascList.set( j, ascList.get(j+1) );
+					ascList.set( j+1, temp);
 				}
 			}
 		}
-		return list;
+		return ascList;
 	}
 	
 }
