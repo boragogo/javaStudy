@@ -1,18 +1,17 @@
 package com.test;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
 
 public class Study07 {
 	
-	// 로또번호 1 ~ 45 숫자 중 6개 (+ 보너스 숫자 1개) 뽑기
+	// 로또번호 1 ~ 45 숫자 중 6개 (+ 보너스 숫자) 뽑기
 
 	public static void main(String[] args) {
 		
 		final int COUNT_OF_LOTTO_NUMBERS = 6;
-		final int COUNT_OF_BONUS_NUMBERS = 3;
+		final int COUNT_OF_BONUS_NUMBERS = 1;
 		
 		// numberList 생성
 		List<Integer> numberList = new ArrayList<Integer>();
