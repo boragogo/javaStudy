@@ -2,47 +2,71 @@ package com.test;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Collections;
+import java.util.List;
 
 public class Study07 {
 	
-	// 로또 1 ~ 45 숫자 중 6개 뽑기
+	// 로또번호 1 ~ 45 숫자 중 6개 (+ 보너스 숫자 1개) 뽑기
 
 	public static void main(String[] args) {
 		
+		final int COUNT_OF_LOTTO_NUMBERS = 6;
+		final int COUNT_OF_BONUS_NUMBERS = 3;
+		
 		// numberList 생성
-		ArrayList<Integer> numberList = new ArrayList<Integer>();
+		List<Integer> numberList = new ArrayList<Integer>();
 		
 		// 1 ~ 45까지 수를 numberList에 추가 
 		for(int i = 1; i <= 45; i++) {
 			numberList.add(i);
 		}
 		
-		// 로또번호 6개 담을 myNumber 배열 생성
-		int[] myNumber = new int[7];
+		List<Integer> lottoNumbers = new ArrayList<>();
+		List<Integer> bonusNumbers = new ArrayList<>();
 		
-		int mylen = myNumber.length;
-		int listSize = numberList.size();
-		
+	
 		// numberList에서 6개 숫자 뽑아 myNumber 배열에 담기
-		for(int i = 0; i < mylen; i++) {
+		for(int i = 0; i < COUNT_OF_LOTTO_NUMBERS; i++) {
+			int listSize = numberList.size();
 			
-			int num = (int)(Math.random() * listSize - 1);
+			int num = (int)(Math.random() * listSize);
+			lottoNumbers.add(numberList.get(num));
 			
-			myNumber[i] = numberList.get(num);
-			
-			// numberList에서 선택된 숫자 제거 
-			numberList.remove(num);	
+			// numberList에서 선택된 숫자 제거
+			numberList.remove(num);
 		} 
 		
-		// myNumber 배열 오름차순 정렬 (보너스 번호 제외)
-		Arrays.sort(myNumber,0,6);
-		
-		// 6개 숫자 출력
-		for(int i = 0; i < mylen - 1; i++) {
-			System.out.print(myNumber[i] + " ");
+		for(int i = 0; i < COUNT_OF_BONUS_NUMBERS; i++) {
+			int listSize = numberList.size();
+			
+			int num = (int)(Math.random() * listSize);
+			bonusNumbers.add(numberList.get(num));
+			
+			numberList.remove(num);
 		}
 		
+		Collections.sort(lottoNumbers);
+	
+		
+		// 로또 번호 출력
+		System.out.print("로또 번호 : ");
+		for(int i = 0; i < lottoNumbers.size(); i++) {
+			if (i > 0) {
+				System.out.print(", ");
+			} 
+			System.out.print(lottoNumbers.get(i));
+			
+		} 
+		System.out.println();
+		
 		// 보너스 번호 출력
-		System.out.print(" 보너스 번호: " + myNumber[6]);
+		System.out.print("보너스번호 : ");
+		for(int i = 0; i < bonusNumbers.size(); i++) {
+			if (i > 0) {
+				System.out.print(", ");
+			}
+			System.out.print(bonusNumbers.get(i));
+		}
 	}
 }
