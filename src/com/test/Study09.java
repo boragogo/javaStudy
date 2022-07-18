@@ -12,7 +12,7 @@ public class Study09 {
 		Scanner sc = new Scanner(System.in);
 		
 		// 번호 입력 횟수
-		final int NUMBER_OF_TIMES = 6;
+		final int NUMBER_OF_TIMES = 8;
 		
 		// 난수 생성하기
 		int randomNum = (int)(Math.random() * 100) + 1;
